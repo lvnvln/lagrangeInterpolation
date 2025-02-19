@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аппроксимация функции методом Лагранжа</title>
+    <link rel="stylesheet" href="../styles/styleLagrangePolinom.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="../script/lagrangePolinom.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Построение графика функции при помощи аппроксимации методом Лагранжа</h1>
+        
+        <div class="form-group">
+            <label for="points">Введите координаты:</label>
+            <table>
+                <thead>
+                    <tr>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>Действия</th>
+                    </tr>
+                </thead>
+                <tbody id="pointsTable">
+                    <tr>
+                        <td><input type="number" class="x-input" placeholder="x"></td>
+                        <td><input type="number" class="y-input" placeholder="y"></td>
+                        <td><button onclick="removeRow(this)">Удалить</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="addRow()">Добавить точку</bugtton>
+        </div>
+    
+        <div class="form-group">
+            <label for="x">Введите значение x для аппроксимации:</label>
+            <input type="number" id="x" placeholder="Введите x">
+        </div>
+        
+        <button onclick="calculateLagrange()">Вычислить</button>
+        
+        <div class="result" id="result"></div>
+    </div>
+    <canvas id="interpolationChart" width="400" height="200"></canvas>
+</body>
+</html>
